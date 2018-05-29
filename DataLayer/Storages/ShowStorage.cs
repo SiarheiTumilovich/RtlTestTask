@@ -100,6 +100,8 @@ namespace DataLayer.Storages
                 .FirstOrDefaultAsync(s => s.ShowId == showId);
 
             _myDbContext.Shows.Remove(show);
+
+            await _myDbContext.Save();
         }
     }
 }
